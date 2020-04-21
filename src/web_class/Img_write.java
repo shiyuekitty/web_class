@@ -34,6 +34,5 @@ public class Img_write {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }
