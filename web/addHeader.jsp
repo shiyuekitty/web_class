@@ -20,12 +20,11 @@
     String USER = "root";
     String PASS = "password";
 
-    String sql = "INSERT into web_class values(?,?,?,?)";
-
     try {
         // 数据库连接
         Class.forName(JDBC_DRIVER);
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        String sql = "INSERT into web_class values(?,?,?,?)";
         PreparedStatement psmt = conn.prepareStatement(sql);
 
         psmt.setInt(1,Integer.parseInt(id));
@@ -33,7 +32,7 @@
         psmt.setString(3,course);
         psmt.setInt(4,Integer.parseInt(score));
 
-        psmt.executeUpdate();
+        int rs=psmt.executeUpdate();
         conn.close();
 
         response.sendRedirect("test_03.jsp");

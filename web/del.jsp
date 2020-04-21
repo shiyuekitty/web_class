@@ -13,9 +13,6 @@
     // 获得id
     String id = request.getParameter("id");
 
-    System.out.println("***********");
-    System.out.println("id:"+id);
-
     String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     String DB_URL = "jdbc:mysql://localhost:3306/test";
     String USER = "root";
@@ -26,9 +23,9 @@
         Class.forName(JDBC_DRIVER);
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
         String sql = "DELETE * FROM web_class where id=?";
-        PreparedStatement psmt = conn.prepareStatement(sql);
 
-        psmt.setInt(1, Integer.parseInt(id));
+        PreparedStatement psmt = conn.prepareStatement(sql);
+        psmt.setInt(1,Integer.parseInt(id));
 
         psmt.executeUpdate();
         conn.close();

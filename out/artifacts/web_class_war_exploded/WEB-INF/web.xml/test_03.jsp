@@ -88,7 +88,7 @@
                     break;
                 }
                 int id = rs.getInt(1);
-                String name1 = rs.getString(2);
+                String name = rs.getString(2);
                 String course = rs.getString(3);
                 int score = rs.getInt(4);
         %>
@@ -97,13 +97,13 @@
         <tr align="center">
             <td style="width: 20%"><input type="hidden" name="id" value="<%=id%>" />
             </td>
-            <td style="width: 20%"><input type="text" name="name" value="<%=name1%>" />
+            <td style="width: 20%"><input type="text" name="name" value="<%=name%>" />
             </td>
             <td style="width: 20%"><input type="text" name="name" value="<%=course%>" />
             </td>
             <td style="width: 20%"><input type="text" name="name" value="<%=score%>" />
             </td>
-            <td style="width: 20%"><input type="button" value="删除" onclick="del(id)"></td>
+            <td style="width: 20%"><input type="button" value="删除" onclick="del(<%=id%>)"></td>
             <td style="width: 20%"><input type="submit" value="更新" ></td>
         </tr>
         </form>
@@ -145,12 +145,12 @@
     </form>
 </center>
 <%
+        conn.close();
     } catch (ClassNotFoundException | SQLException e) {
         e.printStackTrace();
     }
 %>
 <script>
-
     function go(x) {
         window.location.href = "test_03.jsp?page=" + x;
     }

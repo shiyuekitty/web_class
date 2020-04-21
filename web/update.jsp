@@ -18,8 +18,6 @@
 
 
     System.out.println("***********");
-    System.out.println("id:"+id);
-    System.out.println("name:"+name);
     System.out.println("course:"+course);
 
     //访问数据库

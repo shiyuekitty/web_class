@@ -27,7 +27,6 @@
         int id=rs.getInt(1)+1;
         conn.close();
 
-        response.sendRedirect("test_03.jsp");
 %>
 <html>
 <head>
@@ -37,8 +36,8 @@
 <center>
 <a>学生信息添加</a>
 <hr>
-<form>
-    <a>学号：<input type="text" value="<%=id%>" /></a>
+<form action="addHeader.jsp">
+    <a>学号：<input name="id" type="text" value="<%=id%>" /></a>
     <a>姓名：<input type="text" name="name" /></a>
     <a>科目：<select name="course" >
         <option>语文</option>
