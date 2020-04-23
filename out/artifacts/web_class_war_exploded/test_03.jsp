@@ -87,23 +87,23 @@
                 if (!rs.next()) {
                     break;
                 }
-                int id = rs.getInt(1);
-                String name = rs.getString(2);
-                String course = rs.getString(3);
-                int score = rs.getInt(4);
+                int a = rs.getInt(1);
+                String b = rs.getString(2);
+                String c = rs.getString(3);
+                int d = rs.getInt(4);
         %>
         <%--     数据展示    --%>
         <form action="update.jsp">
         <tr align="center">
-            <td style="width: 20%"><input type="hidden" name="id" value="<%=id%>" />
+            <td style="width: 20%"><input  name="id" value="<%=a%>" />
             </td>
-            <td style="width: 20%"><input type="text" name="name" value="<%=name%>" />
+            <td style="width: 20%"><input type="text" name="name" value="<%=b%>" />
             </td>
-            <td style="width: 20%"><input type="text" name="name" value="<%=course%>" />
+            <td style="width: 20%"><input type="text" name="course" value="<%=c%>" />
             </td>
-            <td style="width: 20%"><input type="text" name="name" value="<%=score%>" />
+            <td style="width: 20%"><input type="text" name="score" value="<%=d%>" />
             </td>
-            <td style="width: 20%"><input type="button" value="删除" onclick="del(<%=id%>)"></td>
+            <td style="width: 20%"><input type="button" value="删除" onclick="del(<%=a%>)"></td>
             <td style="width: 20%"><input type="submit" value="更新" ></td>
         </tr>
         </form>
@@ -145,7 +145,6 @@
     </form>
 </center>
 <%
-        conn.close();
     } catch (ClassNotFoundException | SQLException e) {
         e.printStackTrace();
     }

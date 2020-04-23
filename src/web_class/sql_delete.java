@@ -13,7 +13,7 @@ public class sql_delete {
     public static void main(String[] args) throws SQLException {
         Connection conn = null;
         PreparedStatement psmt = null;
-        String sql = "DELETE FROM web_class where id=0";
+        String sql = "DELETE FROM web_class where id=1";
         try {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);

@@ -24,7 +24,7 @@
         // 数据库连接
         Class.forName(JDBC_DRIVER);
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        String sql = "INSERT into web_class values(?,?,?,?)";
+        String sql = "INSERT into web_class(id,name,course,score) VALUES (?,?,?,?)";
         PreparedStatement psmt = conn.prepareStatement(sql);
 
         psmt.setInt(1,Integer.parseInt(id));

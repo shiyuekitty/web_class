@@ -24,7 +24,7 @@
         // 数据库连接
         Class.forName(JDBC_DRIVER);
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        String sql = "INSERT into web_class values(?,?,?,?)";
+        String sql = "INSERT into web_class(id,name,course,score) VALUES (?,?,?,?)";
         PreparedStatement psmt = conn.prepareStatement(sql);
 
         psmt.setInt(1,Integer.parseInt(id));
@@ -32,9 +32,8 @@
         psmt.setString(3,course);
         psmt.setInt(4,Integer.parseInt(score));
 
-        psmt.executeUpdate();
+        int rs=psmt.executeUpdate();
         conn.close();
-        System.out.println("Success!");
 
         response.sendRedirect("test_03.jsp");
 

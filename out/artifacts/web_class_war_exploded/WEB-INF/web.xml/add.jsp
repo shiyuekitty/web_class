@@ -37,7 +37,6 @@
 <a>学生信息添加</a>
 <hr>
 <form action="addHeader.jsp">
-
     <a>学号：<input name="id" type="text" value="<%=id%>" /></a>
     <a>姓名：<input type="text" name="name" /></a>
     <a>科目：<select name="course" >

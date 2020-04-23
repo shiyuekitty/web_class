@@ -7,7 +7,7 @@
   Time: 13:19
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" language="java" %>
 
 <%
     // 获得id
@@ -22,7 +22,7 @@
         // 数据库连接
         Class.forName(JDBC_DRIVER);
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        String sql = "DELETE * FROM web_class where id=?";
+        String sql = "DELETE FROM web_class where id=?";
 
         PreparedStatement psmt = conn.prepareStatement(sql);
         psmt.setInt(1,Integer.parseInt(id));
