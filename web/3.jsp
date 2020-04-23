@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 11637
-  Date: 2020/4/10
-  Time: 13:00
+  Date: 2020/4/23
+  Time: 16:48
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
@@ -13,6 +13,16 @@
     int pageSize = 20;       //每一页展示的数据行数
     int totalRecords = 0;    //总的数据条数
     int xpage = 1;           //当前页
+%>
+<%
+    //验证
+    String passcard=(String)session.getAttribute("passcard");
+
+    if (passcard==null||!passcard.equals("ok3")){
+        out.print("尚未登录，2秒返回登录页面");
+        response.setHeader("refresh","2;login.jsp");
+        return;
+    }
 %>
 <%
     String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -94,25 +104,25 @@
         %>
         <%--     数据展示    --%>
         <form action="update.jsp">
-        <tr align="center">
-            <td style="width: 20%"><input  name="id" value="<%=a%>" />
-            </td>
-            <td style="width: 20%"><input type="text" name="name" value="<%=b%>" />
-            </td>
-            <td style="width: 20%"><input type="text" name="course" value="<%=c%>" />
-            </td>
-            <td style="width: 20%"><input type="text" name="score" value="<%=d%>" />
-            </td>
-            <td style="width: 20%"><input type="button" value="删除" onclick="del(<%=a%>)"></td>
-            <td style="width: 20%"><input type="submit" value="更新" ></td>
-        </tr>
+            <tr align="center">
+                <td style="width: 20%"><input  name="id" value="<%=a%>" />
+                </td>
+                <td style="width: 20%"><input type="text" name="name" value="<%=b%>" />
+                </td>
+                <td style="width: 20%"><input type="text" name="course" value="<%=c%>" />
+                </td>
+                <td style="width: 20%"><input type="text" name="score" value="<%=d%>" />
+                </td>
+                <td style="width: 20%"><input type="button" value="删除" onclick="del(<%=a%>)"></td>
+                <td style="width: 20%"><input type="submit" value="更新" ></td>
+            </tr>
         </form>
         <%
             }
         %>
     </table>
     <hr>
-    <form name="myform" action="test_03.jsp">
+    <form name="myform" action="3.jsp">
         <a>共<%=totalpages%>页
             &nbsp&nbsp
             第<%=xpage%>页
@@ -151,11 +161,11 @@
 %>
 <script>
     function go(x) {
-        window.location.href = "test_03.jsp?page=" + x;
+        window.location.href = "3.jsp?page=" + x;
     }
 
     function gn(x) {
-        window.location.href = "test_03.jsp?page=" + x;
+        window.location.href = "3.jsp?page=" + x;
     }
 
     function del(x) {

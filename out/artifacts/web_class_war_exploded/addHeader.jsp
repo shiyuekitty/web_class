@@ -35,7 +35,7 @@
         int rs=psmt.executeUpdate();
         conn.close();
 
-        response.sendRedirect("test_03.jsp");
+        response.sendRedirect("3.jsp");
 
     } catch (ClassNotFoundException | SQLException e) {
         e.printStackTrace();
