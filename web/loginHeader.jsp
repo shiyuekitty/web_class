@@ -38,9 +38,6 @@
         psmt.setString(1,name);
         psmt.setString(2,password);
 
-        System.out.println(name);
-
-
         ResultSet rs=psmt.executeQuery();
 
         if (rs.next()){

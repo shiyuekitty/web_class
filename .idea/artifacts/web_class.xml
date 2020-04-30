@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="web_class">
+    <output-path>$PROJECT_DIR$/out/artifacts/web_class</output-path>
+    <root id="root">
+      <element id="archive" name="web_class.jar">
+        <element id="module-output" name="web_class" />
+        <element id="dir-copy" path="$PROJECT_DIR$" />
+      </element>
+    </root>
+  </artifact>
+</component>

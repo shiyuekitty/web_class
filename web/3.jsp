@@ -23,6 +23,10 @@
         response.setHeader("refresh","2;login.jsp");
         return;
     }
+    // 权限分级，分类
+    if (passcard.equals("ok1")){
+
+    }
 %>
 <%
     String JDBC_DRIVER = "com.mysql.jdbc.Driver";
